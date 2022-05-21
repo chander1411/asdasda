@@ -18,7 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(
+        title: 'Mock mail',
+      ),
     );
   }
 }
@@ -60,10 +62,13 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          title: Center(child: Text(widget.title)),
         ),
-        body: ListView(
-          children: widgets,
+        body: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10.0),
+          child: ListView(
+            children: widgets,
+          ),
         ));
   }
 }
