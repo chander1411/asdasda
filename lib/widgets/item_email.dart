@@ -51,6 +51,10 @@ class _ItemEmailState extends State<ItemEmail> {
               Text(widget.email.from,
                   style: const TextStyle(fontWeight: FontWeight.bold)),
               Text(widget.email.subject),
+              Center(
+                  child: SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.85,
+                      child: const Divider(color: Colors.red))),
             ]),
           ])),
     );

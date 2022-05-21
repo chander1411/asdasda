@@ -12,28 +12,40 @@ class BodyScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(email.subject),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(email.from),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('From: ${email.subject}'),
-                Text(DateFormat('yyyy-MM-dd HH:mm').format(email.dateTime)),
-              ],
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text('From: ' + email.from,
+                  style: const TextStyle(fontWeight: FontWeight.bold)),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(email.body),
-          ),
-        ],
+            Center(
+                child: SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.95,
+                    child: const Divider(color: Colors.red))),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(email.subject),
+                  Text(DateFormat('yyyy-MM-dd HH:mm').format(email.dateTime)),
+                ],
+              ),
+            ),
+            Center(
+                child: SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.95,
+                    child: const Divider(color: Colors.red))),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(email.body),
+            ),
+          ],
+        ),
       ),
       // Center(
       //     child: Container(
